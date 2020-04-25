@@ -16,13 +16,26 @@ body {
     overflow: hidden;
 }
 
-.botao-laranja {
-    background: #e8491d;
-    height: 38px;
+.botao-Roxo {
+    background: purple;
+    height: 35px;
     border: none;
     padding-left: 20px;
     padding-right: 20px;
     color: #ffffff;
+    font-weight: bold;
+    margin-left: 43%;
+}
+
+.botao-Roxo2 {
+    background: purple;
+    height: 35px;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 40%;
 }
 
 ul {
@@ -34,7 +47,7 @@ ul {
 /*HEADER*/
 
 .header {
-    background: rgb(221, 221, 221);
+    background: rgb(255, 255, 255);
     color: purple;
     padding-top: 30px;
     min-height: 70px;
@@ -59,13 +72,13 @@ ul {
     float: left;
 }
 
-.header .title-header h1 {
+.title-header h1 {
     margin: 0;
 }
 
 .nav {
     float: right;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .header .highlight,
@@ -75,82 +88,65 @@ ul {
 }
 
 
-/*showcase*/
+/* Simulador */
 
-.showcase {
-    min-height: 400px;
-    background: url('../img/team.png') no-repeat;
+.quadrado1 .form {
     text-align: center;
-    color: #ffffff;
-}
-
-.showcase h1 {
-    font-size: 55px;
-    margin-top: 100px;
-    margin-bottom: 10px;
-}
-
-.showcase p {
-    font-size: 20px;
-}
-
-
-/*New*/
-
-.new {
-    background-color: #232323;
-    padding: 15px;
-    color: white;
-}
-
-.new h1 {
-    float: left;
-}
-
-.new form {
-    float: right;
-    padding: 15px;
-}
-
-.new input {
-    padding: 4px;
-    height: 25px;
-    width: 250px;
 }
 
 .quadrado1 {
-    height: 500px;
-    width: 500px;
-    float: left;
-    margin-left: 250px;
-    margin-top: 50px;
-    border-bottom: orangered 5px solid;
-}
-
-.quadrado2 {
-    height: 500px;
-    width: 25%;
-    float: right;
-    margin-right: 250px;
-    margin-top: 50px;
-    border-bottom: orangered 5px solid;
-}
-
-.quadrado3 {
-    height: 200px;
-    width: 74%;
-    float: left;
-    margin-top: 30px;
-    margin-right: 250px;
-    margin-left: 245px;
-    border-bottom: orangered 5px solid;
-}
-
-.assunto {
-    text-align: center;
-}
-
-.baixo {
-    text-align: justify;
+    height: 750px;
+    width: 700px;
+    margin-left: 30%;
     margin-top: 100px;
+    border-bottom: purple 10px solid;
+    border-top: purple 10px solid;
+}
+
+.quadrado1 .form input {
+    padding: 4px;
+    height: 12px;
+    width: 200px;
+    display: flex;
+    margin-left: 34%;
+}
+
+.form b {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 200px;
+}
+
+.quadrado1 {
+    width: 700px;
+    height: 740px;
+    background-image: url('../img/roxo.png');
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.form {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.resultadoStyle {
+    color: white;
+    margin-left: 33%;
+    font-weight: bold;
+}
+
+.FIM {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    height: 70px;
+    width: 100%;
+    background-color: purple;
+}
+
+.FIM p {
+    padding-top: 25px;
 }

@@ -28,23 +28,33 @@
     </div>
 
 
-    <b>Faça sua simulação agora!</b><br><br> Nome da sua empresa: <input style="border-radius: 5px; margin-bottom: 5px" id="empresa"><br>
-    <!-- Nome da empresa-->
-    Quantas lâmpadas há na sua empresa? <input style="border-radius: 5px; margin-bottom: 5px" id="qtd_lampadas"><br>
-    <!--Quantidade de lampadas-->
-    Elas são de quantos Watts? <input style="border-radius: 5px; margin-bottom: 5px" id="watts"><br>
-    <!-- Quantidade de Watts por lampada-->
-    Quantas horas por dia ficam acessas? <input style="border-radius: 5px; margin-bottom: 5px" id="hora"><br>
-    <!-- Quantas horas estão em funcionamento-->
-    Quantos dias por mês elas estão em funcionamento? <input style="border-radius: 5px; margin-bottom: 5px" id="mes"><br><br>
-    <!-- Quantos dias por mês-->
 
-    <button style="border-radius: 5px; color: rgb(0, 0, 0)" onclick="no_cliente()"><b>Calcular</b></button><br><br>
-    <div id="fora"></div><br>
+    <div class="quadrado1">
+
+        <form class="form">
+            <b class="titulo">Faça sua simulação agora!</b><br><br> Nome da sua empresa: <input id="empresa"><br>
+            <!-- Nome da empresa-->
+            Quantas lâmpadas há na sua empresa? <input id="qtd_lampadas"><br><br>
+            <!--Quantidade de lampadas-->
+            Elas são de quantos Watts? <input id="watts"><br><br>
+            <!-- Quantidade de Watts por lampada-->
+            Quantas horas por dia ficam acessas? <input id="hora"><br><br>
+            <!-- Quantas horas estão em funcionamento-->
+            Quantos dias por mês elas estão em funcionamento? <input id="mes"><br><br>
+            <!-- Quantos dias por mês-->
+
+        </form>
+        <button class="botao-Roxo" onclick="no_cliente()"><b>Calcular</b></button><br><br>
+        <span class="resultadoStyle" id="fora"></span><br><br>
 
 
-    <button style="border-radius: 5px; color: black" onclick="cliente()"><b>Sua economia</b></button><br><br>
-    <div id="dentro"></div>
+        <button class="botao-Roxo2" onclick="cliente()"><b>Sua economia</b></button><br><br>
+        <span class="resultadoStyle" id="dentro"></span>
+
+    </div>
+    <div class="FIM">
+        <p>ECOLight® Copyright 2020</p>
+    </div>
 
 
 </body>
@@ -57,7 +67,7 @@
         var consumo_diario = (((watts.value * qtd_lampadas.value)) * hora.value); // Aqui eu tenho o consumo de kW/h diario
         var tt = (consumo_diario * preco) * mes.value; // Aqui eu tenho o consumo de kW/h mensal
 
-        fora.innerHTML = `O gasto mensal da <b>${empresa.value}</b> é de <b style="color: Black">R$ ${(tt).toFixed(2)}</b>.`; // O que irá aparecer na tela
+        fora.innerHTML = `O gasto mensal da <b>${empresa.value}</b> é de <b style="color: White">R$ ${(tt).toFixed(2)}</b>.`; // O que irá aparecer na tela
     }
 
     function cliente() {
