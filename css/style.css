@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+
+/*Global*/
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.botao-laranja {
+    background: #e8491d;
+    height: 38px;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*HEADER*/
+
+.header {
+    background: rgb(221, 221, 221);
+    color: purple;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: purple 3px solid;
+}
+
+.header a {
+    color: rgb(71, 1, 71);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.header li {
+    float: left;
+    display: inline;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.header .title-header {
+    float: left;
+}
+
+.header .title-header h1 {
+    margin: 0;
+}
+
+.nav {
+    float: right;
+    margin-top: 10px;
+}
+
+.header .highlight,
+.header .current a {
+    color: purple;
+    font-weight: bold;
+}
+
+
+/*showcase*/
+
+.showcase {
+    min-height: 400px;
+    background: url('../img/team.png') no-repeat;
+    text-align: center;
+    color: #ffffff;
+}
+
+.showcase h1 {
+    font-size: 55px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.showcase p {
+    font-size: 20px;
+}
+
+
+/*New*/
+
+.new {
+    background-color: #232323;
+    padding: 15px;
+    color: white;
+}
+
+.new h1 {
+    float: left;
+}
+
+.new form {
+    float: right;
+    padding: 15px;
+}
+
+.new input {
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+.quadrado1 {
+    height: 500px;
+    width: 500px;
+    float: left;
+    margin-left: 250px;
+    margin-top: 50px;
+    border-bottom: orangered 5px solid;
+}
+
+.quadrado2 {
+    height: 500px;
+    width: 25%;
+    float: right;
+    margin-right: 250px;
+    margin-top: 50px;
+    border-bottom: orangered 5px solid;
+}
+
+.quadrado3 {
+    height: 200px;
+    width: 74%;
+    float: left;
+    margin-top: 30px;
+    margin-right: 250px;
+    margin-left: 245px;
+    border-bottom: orangered 5px solid;
+}
+
+.assunto {
+    text-align: center;
+}
+
+.baixo {
+    text-align: justify;
+    margin-top: 100px;
+}
