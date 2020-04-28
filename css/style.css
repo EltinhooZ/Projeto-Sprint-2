@@ -150,3 +150,58 @@ ul {
 .FIM p {
     padding-top: 25px;
 }
+
+
+/* Página serviços */
+
+.QuadradoServ {
+    height: 500px;
+    width: 550px;
+    float: left;
+    background-color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 170px;
+    margin-top: 45px;
+    border-bottom: purple 5px solid;
+}
+
+.QuadradoServ h1 {
+    color: purple;
+}
+
+.QuadradoServ2 img {
+    width: 550px;
+    height: 450px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 200px;
+    margin-top: 45px;
+}
+
+.QuadradoServ3 p {
+    color: white;
+    background-color: black;
+    margin-bottom: 100px;
+    border-radius: 12px;
+    border-bottom: purple 10px solid;
+}
+
+.QuadradoServ3 h1 {
+    color: purple;
+}
+
+.assunto {
+    text-align: center;
+}
+
+.baixo {
+    text-align: justify;
+    margin-top: 50px;
+}
+
+.container img {
+    width: 1000px;
+    margin-left: 15%;
+    margin-top: 5%;
+}
