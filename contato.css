@@ -1,0 +1,47 @@
+.form_img .imagem{
+    height: 100px;
+    width: 100px;
+    position: relative;
+    left: 600px;
+    top: 200px;
+}
+
+.form_nome input{
+    height: 30px;
+    border-radius: 7px;
+    /* box-shadow: 4px 4px 4px; */
+}
+
+.form_email input{
+    height: 30px;
+    border-radius: 7px;
+}
+
+.div_form .text_area{
+    height: 150px;
+    width: 320px;
+    border-radius: 7px;
+    position: fixed;
+    padding: 13px;
+}
+
+.contact{
+    float: right;
+    object-position: center;
+    position: relative;
+    right: 600px;
+}
+
+.text_area{
+    resize: none;
+}
+
+formulario .form_img {
+    position: relative;
+    top: 30px;
+    background: blue;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;       
+}
