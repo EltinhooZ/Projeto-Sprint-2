@@ -1,22 +1,20 @@
-body,
-html {
+body, html {
     height: 100%;
     margin: auto;
+    
 }
-
 div.dashboard {
     display: flex;
-    flex-direction: row;
+    flex-direction: row ;
     height: 100%;
     width: 100%;
 }
-
 sidebar {
     display: block;
     height: 100%;
-    width: 300px;
+    width: 300px; 
+    
 }
-
 .dashboard header {
     display: flex;
     flex-direction: row;
@@ -26,12 +24,11 @@ sidebar {
     padding: 10px 30px;
     background-color: #ffffff;
     text-transform: uppercase;
+    border: 1px solid rgba(0,0,0.0625);  
 }
-
 .dashboard header a {
     text-decoration: none;
 }
-
 sidebar .sidebar-title {
     display: flex;
     flex-direction: row;
@@ -39,53 +36,51 @@ sidebar .sidebar-title {
     align-items: center;
     padding: 10px 30px;
     height: 90px;
-}
-
+    
+} 
 sidebar .sidebar-title img {
     height: 70px;
     width: 70px;
 }
-
 h2 {
     font-size: 18px;
     margin-top: 8px;
     color: purple;
 }
-
 div.menu ul li {
     list-style: none;
 }
-
-#login {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    left: 215px;
-    text-transform: uppercase;
-}
-
 #login:hover {
-    color: darkblue;
-    transform: translate(0.5);
+   color: darkblue;
+   transform: translate(0.5);
 }
-
 #simulador {
     display: flex;
     flex-direction: row;
     position: relative;
-    left: 430px;
+    left: 400px;
     text-transform: uppercase;
+    color: purple;
 }
-
 #simulador:hover {
     color: darkblue;
     transform: translate(0.5);
 }
-
 .dashboard header a:hover {
     color: darkblue;
 }
-
-#home {
-    border: 0 20px solid red;
+/* menu */
+.menu a{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid purple;
+}
+.menu ul {
+    padding: 0%;
+}
+#logout {
+    color: purple;
 }
