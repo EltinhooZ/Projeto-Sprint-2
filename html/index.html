@@ -43,8 +43,8 @@
         </sidebar>
         <main>
             <header>
-                <a  href="index.html" id="pt"><i class="fas fa-home"></i>Dashboard</a>
-                <a  href="Simulador.html" id="simulador"><i class="fas fa-clipboard-list"></i> Simulador </a>
+                <a href="index.html" id="pt"><i class="fas fa-home"></i>Dashboard</a>
+                <a href="Simulador.html" id="simulador"><i class="fas fa-clipboard-list"></i> Simulador </a>
                 <a href="cadastro.html" id="cadastro"><i class="fas fa-user"></i>Cadastro</a>
                 <a href="Inicio.html" id="logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
             </header>
@@ -52,7 +52,7 @@
             <div class="content_painel">
                 <div style="width:95%;">
                     <canvas id="c_grafico"></canvas>
-                
+
                 </div>
                 <br>
                 <br>
@@ -68,7 +68,6 @@
 <script src="../Plugins/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
 <script src="../Plugins/fontawesome-free-5.13.0-web/js/all.min.js"></script>
 <script>
-
     var config = {
         type: 'line',
         data: {
@@ -113,43 +112,37 @@
             }
         }
     };
+
     function sortearTemperatura() {
-        var limiteMin = 0;
-        var limiteMax = 70;
+        var limiteMin = 600;
+        var limiteMax = 800;
         var minimoAbsoluto = Math.abs(limiteMin);
-        return (Math.random() * (minimoAbsoluto + limiteMax) - minimoAbsoluto).toFixed(1);
+        return (Math.random() * (minimoAbsoluto - limiteMax) + minimoAbsoluto).toFixed(2);
     }
+
     function recuperarDadosIniciais() {
-        var registros = [
-            {
-                momento: '00:03:42',
-                leitura: sortearTemperatura()
-            },
-            {
-                momento: '00:03:52',
-                leitura: sortearTemperatura()
-            },
-            {
-                momento: '00:04:02',
-                leitura: sortearTemperatura()
-            },
-            {
-                momento: '00:04:12',
-                leitura: sortearTemperatura()
-            },
-            {
-                momento: '00:04:22',
-                leitura: sortearTemperatura()
-            },
-            {
-                momento: '00:04:32',
-                leitura: sortearTemperatura()
-            },
-            {
-                momento: '00:04:42',
-                leitura: sortearTemperatura()
-            }
-        ];
+        var registros = [{
+            momento: '00:03:42',
+            leitura: sortearTemperatura()
+        }, {
+            momento: '00:03:52',
+            leitura: sortearTemperatura()
+        }, {
+            momento: '00:04:02',
+            leitura: sortearTemperatura()
+        }, {
+            momento: '00:04:12',
+            leitura: sortearTemperatura()
+        }, {
+            momento: '00:04:22',
+            leitura: sortearTemperatura()
+        }, {
+            momento: '00:04:32',
+            leitura: sortearTemperatura()
+        }, {
+            momento: '00:04:42',
+            leitura: sortearTemperatura()
+        }];
         var contador = 0;
 
         while (contador < registros.length) {
@@ -161,6 +154,7 @@
         }
 
     }
+
     function receberNovasLeituras() {
         setTimeout(() => {
 
@@ -197,5 +191,4 @@
     }
 
     window.onload = plotarGrafico;
-
 </script>
