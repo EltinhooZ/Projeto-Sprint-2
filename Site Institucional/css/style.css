@@ -88,6 +88,90 @@ ul {
 }
 
 
+/* Página inicial */
+
+.showcase {
+    min-height: 400px;
+    background: url('../img/fundo.png')no-repeat;
+    background-size: 100%;
+    text-align: center;
+    color: #ffffff;
+}
+
+.showcase h1 {
+    font-size: 55px;
+    margin-top: 150px;
+    color: rgb(253, 170, 253);
+}
+
+.new {
+    background-color: rgb(182, 182, 182);
+    padding: 15px;
+    color: purple;
+}
+
+.new h1 {
+    float: left;
+}
+
+.new form {
+    float: right;
+    padding: 15px;
+}
+
+.new input {
+    padding: 4px;
+    height: 20px;
+    width: 250px;
+    margin-left: 90px;
+}
+
+.showcase2 {
+    min-height: 300px;
+    background: url('../img/verde.png')no-repeat;
+    text-align: center;
+    color: #ffffff;
+    background-position: center;
+    background-size: 100%;
+}
+
+.showcase2 h1 {
+    font-size: 55px;
+    margin-top: 100px;
+    color: rgb(255, 255, 255);
+}
+
+.showcase2 h1 span {
+    color: green;
+}
+
+.container p {
+    font-style: bold;
+    font-size: 20px;
+    color: black;
+    height: 100px;
+    display: inline;
+}
+
+.container p b {
+    display: flex;
+    width: 150px;
+    padding: 10px;
+    margin-top: 20px;
+    color: black;
+}
+
+.container p span {
+    padding-right: 10px;
+}
+
+.container p b span {
+    font-style: oblique;
+    background-color: black;
+    
+}
+
+
 /* Simulador */
 
 .quadrado1 .form {

@@ -114,10 +114,16 @@
     };
 
     function sortearTemperatura() {
-        var limiteMin = 600;
-        var limiteMax = 800;
+        var limiteMin = 300;
+        var limiteMax = 600;
         var minimoAbsoluto = Math.abs(limiteMin);
-        return (Math.random() * (minimoAbsoluto - limiteMax) + minimoAbsoluto).toFixed(2);
+
+        var luminosidade = parseInt(Math.random() * (limiteMax - limiteMin)) + limiteMin;
+        console.log(luminosidade);
+        return luminosidade;
+
+        // return (Math.random()* limiteMax );
+
     }
 
     function recuperarDadosIniciais() {
@@ -178,7 +184,7 @@
 
             receberNovasLeituras();
 
-        }, 7000);
+        }, 2000);
     }
 
     function plotarGrafico() {
