@@ -380,6 +380,8 @@ formulario .form_img {
     flex-direction: row;
 }
 
+/* Login */
+
 .quadrado2 {
     height: 35%;
     width: 35%;
@@ -390,6 +392,7 @@ formulario .form_img {
     border-top: purple 10px solid;
     background-image: url('../img/roxo.png');
     background-repeat: no-repeat;
+    border-radius: 10px;
 }
 
 .dentro {
@@ -429,7 +432,7 @@ formulario .form_img {
     height: 55%;
     width: 35%;
     margin-left: 34%;
-    margin-top: 50px;
+    margin-top: 80px;
     margin-bottom: 50px;
     border-bottom: purple 10px solid;
     border-top: purple 10px solid;
