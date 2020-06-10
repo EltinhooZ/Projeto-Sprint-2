@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECCOligth</title>
+    <title>ECOligth</title>
     <link rel="stylesheet" href="../Css/menusRight.css">
     <link rel="stylesheet" href="../Css/contato.css">
     <link rel="stylesheet" href="../Css/equipe.css">
@@ -22,7 +22,7 @@
         <sidebar>
             <div class="sidebar-title">
                 <img src="../imgs/undraw_contract_uy56.png" alt="">
-                <h2>ECCOlight</h2>
+                <h2>ECOLIGHT</h2>
             </div>
             <div class="menu">
                 <ul id="menus_right">
@@ -106,7 +106,7 @@
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'ºC'
+                        labelString: 'LUX'
                     }
                 }]
             }
@@ -114,8 +114,8 @@
     };
 
     function sortearTemperatura() {
-        var limiteMin = 300;
-        var limiteMax = 600;
+        var limiteMin = 600;
+        var limiteMax = 900;
         var minimoAbsoluto = Math.abs(limiteMin);
 
         var luminosidade = parseInt(Math.random() * (limiteMax - limiteMin)) + limiteMin;
