@@ -88,11 +88,11 @@ function registrar_leitura(Luminosidade) {
     banco.conectar().then(() => {
 
         return banco.sql.query(`
-        INSERT into dados_sensor (idDados, Emissão, lux, fkSensor)
-        values (CONVERT(Datetime, '${agora()}', 120) ${Luminosidade}, 11);
+        INSERT into dados_sensor (Emissão, lux, fkSensor)
+        values (CONVERT(Datetime, '${agora()}', 120), ${Luminosidade}, 10);
         
-        delete from leitura where id not in 
-        (select top ${registros_mantidos_tabela_leitura} id from leitura order by id desc);`)
+        delete from dados_sensor where idDados not in 
+        (select top ${registros_mantidos_tabela_leitura} idDados from dados_sensor order by idDados desc);`)
             .then(() => {
                 console.log('Registro inserido com sucesso!');
             });
@@ -120,7 +120,7 @@ if (gerar_dados_aleatorios) {
     // dados aleatórios
     setInterval(function() {
         console.log('Gerando valores aleatórios!');
-        registrar_leitura(Math.random(800))
+        registrar_leitura(Math.random()*800)
     }, intervalo_geracao_aleatoria_segundos * 1000);
 } else {
     // iniciando a "escuta" de dispositivos Arduino.
