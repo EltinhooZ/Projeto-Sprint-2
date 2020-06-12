@@ -220,6 +220,12 @@ ul {
     color: white;
     margin-left: 33%;
     font-weight: bold;
+    text-align: center;
+}
+
+#dentro {
+    float: right;
+    margin-right: 33%;
 }
 
 .FIM {
