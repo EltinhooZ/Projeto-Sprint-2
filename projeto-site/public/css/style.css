@@ -1,4 +1,4 @@
-﻿body {
+body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     line-height: 1.5;
@@ -17,7 +17,7 @@
 }
 
 .botao-Roxo {
-    background: purple;
+    background: purple;  
     height: 35px;
     border: none;
     padding-left: 20px;
@@ -62,7 +62,6 @@ ul {
 }
 
 .header li {
-    float: left;
     display: inline;
     padding-left: 20px;
     padding-right: 20px;
@@ -88,90 +87,6 @@ ul {
 }
 
 
-/* Página inicial */
-
-.showcase {
-    min-height: 400px;
-    background: url('../img/fundo.png')no-repeat;
-    background-size: 100%;
-    text-align: center;
-    color: #ffffff;
-}
-
-.showcase h1 {
-    font-size: 55px;
-    margin-top: 150px;
-    color: rgb(253, 170, 253);
-}
-
-.new {
-    background-color: rgb(182, 182, 182);
-    padding: 15px;
-    color: purple;
-}
-
-.new h1 {
-    float: left;
-}
-
-.new form {
-    float: right;
-    padding: 15px;
-}
-
-.new input {
-    padding: 4px;
-    height: 20px;
-    width: 250px;
-    margin-left: 90px;
-}
-
-.showcase2 {
-    min-height: 300px;
-    background: url('../img/verde.png')no-repeat;
-    text-align: center;
-    color: #ffffff;
-    background-position: center;
-    background-size: 100%;
-}
-
-.showcase2 h1 {
-    font-size: 55px;
-    margin-top: 100px;
-    color: rgb(255, 255, 255);
-}
-
-.showcase2 h1 span {
-    color: green;
-}
-
-.container p {
-    font-style: bold;
-    font-size: 20px;
-    color: black;
-    height: 100px;
-    display: inline;
-}
-
-.container p b {
-    display: flex;
-    width: 150px;
-    padding: 10px;
-    margin-top: 20px;
-    color: black;
-}
-
-.container p span {
-    padding-right: 10px;
-}
-
-.container p b span {
-    font-style: oblique;
-    background-color: black;
-    
-}
-
-
 /* Simulador */
 
 .quadrado1 .form {
@@ -193,6 +108,7 @@ ul {
     width: 200px;
     display: flex;
     margin-left: 34%;
+    
 }
 
 .form b {
@@ -200,14 +116,16 @@ ul {
     text-align: center;
     font-weight: bold;
     margin-top: 200px;
+    
 }
 
 .quadrado1 {
     width: 700px;
     height: 740px;
-    background-image: url('../img/roxo.png');
+    background-image: url('../imgs/roxo.png');
     background-repeat: no-repeat;
     border-radius: 10px;
+   
 }
 
 .form {
@@ -220,12 +138,6 @@ ul {
     color: white;
     margin-left: 33%;
     font-weight: bold;
-    text-align: center;
-}
-
-#dentro {
-    float: right;
-    margin-right: 33%;
 }
 
 .FIM {
@@ -240,13 +152,11 @@ ul {
 .FIM p {
     padding-top: 25px;
 }
-
-
 /* Página serviços */
 
 .QuadradoServ {
-    height: 20%;
-    width: 28%;
+    height: 500px;
+    width: 550px;
     float: left;
     background-color: white;
     padding-left: 50px;
@@ -254,6 +164,8 @@ ul {
     margin-left: 170px;
     margin-top: 45px;
     border-bottom: purple 5px solid;
+    position: relative;
+    left: 160px;
 }
 
 .QuadradoServ h1 {
@@ -261,12 +173,14 @@ ul {
 }
 
 .QuadradoServ2 img {
-    width: 25%;
-    height: 20%;
+    width: 550px;
+    height: 450px;
     padding-left: 50px;
     padding-right: 50px;
     margin-left: 200px;
     margin-top: 45px;
+    position: relative;
+    left: 160px;
 }
 
 .QuadradoServ3 p {
@@ -294,18 +208,19 @@ ul {
     width: 1000px;
     margin-left: 25%;
     margin-top: 10px;
+    position: relative;
+    right: 150px;
 }
 
 .container2 {
     width: 100%;
     margin: auto;
     overflow: hidden;
-    background-image: url('../img/roxo.png');
+    background-image: url('../imgs/roxo.png');
     margin-top: 80px;
     border-radius: 10px;
+    
 }
-
-
 /* planos */
 
 .card {
@@ -334,61 +249,9 @@ ul {
     display: flex;
     margin-left: 200px;
 }
+/*LOGIN*/ 
 
-
-/* Contato */
-
-.form_img .imagem {
-    height: 100px;
-    width: 100px;
-    position: relative;
-    left: 600px;
-    top: 200px;
-}
-
-.form_nome input {
-    height: 30px;
-    border-radius: 7px;
-    /* box-shadow: 4px 4px 4px; */
-}
-
-.form_email input {
-    height: 30px;
-    border-radius: 7px;
-}
-
-.div_form .text_area {
-    height: 150px;
-    width: 320px;
-    border-radius: 7px;
-    position: fixed;
-    padding: 13px;
-}
-
-.contact {
-    float: right;
-    object-position: center;
-    position: relative;
-    right: 600px;
-}
-
-.text_area {
-    resize: none;
-}
-
-formulario .form_img {
-    position: relative;
-    top: 30px;
-    background: blue;
-    height: 50%;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-}
-
-/* Login */
-
-.quadrado2 {
+.quadrado2{
     height: 35%;
     width: 35%;
     margin-left: 34%;
@@ -398,15 +261,14 @@ formulario .form_img {
     border-top: purple 10px solid;
     background-image: url('../img/roxo.png');
     background-repeat: no-repeat;
-    border-radius: 10px;
 }
 
-.dentro {
+.dentro{
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.form2 {
+.form2{
     text-align: center;
     font-size: arial;
     color: white;
@@ -414,39 +276,37 @@ formulario .form_img {
     margin-top: 20px;
 }
 
-.form2 h1 {
+.form2 h1{
     color: purple;
     text-align: center;
 }
 
-.dentro a {
+
+
+.dentro a{
     font-size: small;
 }
 
-.entrar {
+.entrar{
     border: none;
     height: 30px;
     width: 60px;
     background-color: purple;
     color: white;
-}
-
-
-/*CADASTRO*/
-
-.quadrado3 {
+}/*CADASTRO*/
+.quadrado3{
     height: 55%;
     width: 35%;
     margin-left: 34%;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 50px;
     border-bottom: purple 10px solid;
     border-top: purple 10px solid;
-    background-image: url('../img/roxo.png');
+    background-image: url('../imgs/roxo.png');
     background-repeat: no-repeat;
 }
 
-.form3 {
+.form3{
     font-size: arial;
     color: white;
     margin-bottom: 10px;
@@ -454,80 +314,7 @@ formulario .form_img {
     text-align: center;
 }
 
-.form3 h1 {
+.form3 h1{
     color: purple;
     text-align: center;
-}
-
-.cadastro {
-    border: none;
-    height: 30px;
-    width: 80px;
-    background-color: purple;
-    color: white;
-}
-
-*/ contato */ .form_img .imagem {
-    height: 100px;
-    width: 100px;
-    position: relative;
-    left: 600px;
-    top: 200px;
-}
-
-.form_nome input {
-    height: 30px;
-    border-radius: 7px;
-    /* box-shadow: 4px 4px 4px; */
-}
-
-.form_email input {
-    height: 30px;
-    border-radius: 7px;
-}
-
-.div_form .text_area {
-    height: 150px;
-    width: 320px;
-    border-radius: 7px;
-    position: fixed;
-    padding: 13px;
-}
-
-.contact {
-    float: right;
-    object-position: center;
-    position: relative;
-    right: 600px;
-}
-
-.text_area {
-    resize: none;
-}
-
-formulario .form_img {
-    position: relative;
-    top: 30px;
-    background: blue;
-    height: 50%;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-}
-
-
-/* Sobre */
-
-.QuadradoServsobrenos {
-    height: 400px;
-    width: 550px;
-    float: left;
-    background-color: white;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-left: 170px;
-    margin-top: 45px;
-    border-bottom: purple 5px solid;
-    position: relative;
-    left: 160px;
 }

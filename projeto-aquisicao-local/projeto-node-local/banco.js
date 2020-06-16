@@ -1,14 +1,9 @@
 const configuracoes = {
     banco: {
         server: "serveruminosidade1a.database.windows.net",
-<<<<<<< HEAD
-        user: "Elton Silva",
-        password: "123456",
-=======
         user: "adminlocal",
         password: "20020302@Heric",
->>>>>>> d5a474d614077e209a108394a2481e0956b57306
-        database: "bdluminosidade1",
+        database: "bdLuminosidade1",
         options: {
             encrypt: true
         },

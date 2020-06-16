@@ -1,12 +1,202 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOligth</title>
+    <link rel="stylesheet" href="./Css/menusRight.css">
+    <link rel="stylesheet" href="./Css/contato.css">
+    <link rel="stylesheet" href="./Css/equipe.css">
+    <link rel="stylesheet" href="./Css/sobre.css">
+    <link rel="stylesheet" href="./Css/index.css">
+    <link rel="stylesheet" href="./Css/main.css">
+    <link rel="stylesheet" href="./Plugins/fontawesome-free-5.13.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./Plugins/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
 </head>
 
 <body>
-  HTML funcionando! te juro!
+    <div class="dashboard">
+        <sidebar>
+            <div class="sidebar-title">
+                <img src="./imgs/undraw_contract_uy56.png" alt="">
+                <h2>ECOLIGHT</h2>
+            </div>
+            <div class="menu">
+                <ul id="menus_right">
+                    <li>
+                        <a href="sobre.html"><i class="fas fa-book-open"></i> Sobre</a>
+                    </li>
+                    <li>
+                        <a href="servico.html"><i class="fas fa-align-left"></i> Serviço</a>
+                    </li>
+                    <li>
+                        <a href="equipe.html"><i class="fas fa-user-friends"></i> Equipe</a>
+                    </li>
+                    <li>
+                        <a href="contato.html"><i class="fas fa-address-book"></i> Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </sidebar>
+        <main>
+            <header>
+                <a href="index.html" id="pt"><i class="fas fa-home"></i>Dashboard</a>
+                <a href="Simulador.html" id="simulador"><i class="fas fa-clipboard-list"></i> Simulador </a>
+                <a href="cadastro.html" id="cadastro"><i class="fas fa-user"></i>Cadastro</a>
+                <a href="Inicio.html" id="logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </header>
+            <!--Dashboard-->
+            <div class="content_painel">
+                <div style="width:95%;">
+                    <canvas id="canvas_grafico"></canvas>
+
+                </div>
+                <br>
+                <br>
+            </div>
+
+
+        </main>
+    </div>
+
 </body>
 
 </html>
+<script src="./Plugins/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+<script src="./Plugins/fontawesome-free-5.13.0-web/js/all.min.js"></script>
+<script>
+    var dados = {
+    labels: [],
+    datasets: [
+        {
+            yAxisID: 'y-temperatura',
+            label: 'Luminosidade',
+            borderColor: window.chartColors.red,
+            backgroundColor: window.chartColors.red,
+            fill: false,
+            data: []
+        }
+       
+    ]
+};
+    window.onload = obterDadosGrafico;
+
+verificar_autenticacao();
+
+// neste JSON tem que ser 'labels', 'datasets' etc, 
+// porque é o padrão do Chart.js
+
+
+// só mexer se quiser alterar o tempo de atualização
+// ou se souber o que está fazendo!
+function atualizarGrafico() {
+
+    fetch('/leituras/tempo-real', { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (novoRegistro) {
+
+                console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                
+                // tirando e colocando valores no gráfico
+                dados.labels.shift(); // apagar o primeiro
+                dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
+                dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+    
+                dados.datasets[0].data.push(novoRegistro.lux); // incluir uma nova leitura de temperatura
+                
+                window.grafico_linha.update();
+                
+                setTimeout(atualizarGrafico, 5000);
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+            setTimeout(atualizarGrafico, 5000);
+        }
+    })
+    .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    });
+    
+}
+
+// altere aqui as configurações do gráfico
+// (tamanhos, cores, textos, etc)
+function configurarGrafico() {
+    var configuracoes = {
+        responsive: true,
+        animation: {duration: 500},
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+            display: true,
+            text: 'Histórico recente de temperatura e umidade'
+        },
+        scales: {
+            yAxes: [{
+                type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                display: true,
+                position: 'left',
+                id: 'y-temperatura',
+            }]
+        }
+    };
+
+    return configuracoes;
+}
+
+// altere aqui como os dados serão exibidos
+// e como são recuperados do BackEnd
+function obterDadosGrafico() {
+
+    fetch('/leituras/ultimas', { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                resposta.reverse();
+
+                for (i = 0; i < resposta.length; i++) {
+                    var registro = resposta[i];
+                
+                    // aqui, após 'registro.' use os nomes 
+                    // dos atributos que vem no JSON 
+                    // que gerou na consulta ao banco de dados
+
+                    dados.labels.push(registro.momento_grafico);
+
+                    dados.datasets[0].data.push(registro.lux);
+                   
+                }
+                console.log(JSON.stringify(dados));
+
+                
+                plotarGrafico(dados);
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    })
+    .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    });
+
+}
+
+// só altere aqui se souber o que está fazendo!
+function plotarGrafico(dados) {
+    console.log('iniciando plotagem do gráfico...');
+
+    var ctx = canvas_grafico.getContext('2d');
+    window.grafico_linha = Chart.Line(ctx, {
+        data: dados,
+        options: configurarGrafico()
+    });
+
+    setTimeout(atualizarGrafico, 5000);
+}
+
+</script>

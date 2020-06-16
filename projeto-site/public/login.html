@@ -27,15 +27,16 @@
     </div>
 
     <div class="quadrado2">
-        <form class="form2">
+        <form id="form_login" method="post" 
+        onsubmit="return entrar()" class="form2">
             <h1>ECOLight</h1>
             <div class="dentro">
-                <input type="text" id="usuario" placeholder="Usuario ou Email" autofocus> <br> <br>
-                <input type="password" id="senha" placeholder="Senha"> <br> <br>
+                <input name="login" type="text" id="usuario" placeholder="Usuario ou Email" autofocus> <br> <br>
+                <input name="senha" type="password" id="senha" placeholder="Senha"> <br> <br>
                 <input type="checkbox" id="manter"> Manter-me conectado <br> <br>
                 <a href="#.html"> Esqueci minha senha </a> <br>
                 <a href="cadastro.html"> Não sou cadastrado </a> <br> <br>
-                <button class="entrar"> Entrar </button>
+                <button id="btn_entrar" class="entrar"> Entrar </button>
             </div>
         </form>
     </div>
@@ -43,3 +44,37 @@
 
 
 </html>
+
+<script>
+
+    function entrar() {
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+            
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    
+                    window.location.href = 'index.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                response.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+</script>
