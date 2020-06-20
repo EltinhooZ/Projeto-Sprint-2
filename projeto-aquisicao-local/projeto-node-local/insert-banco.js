@@ -20,7 +20,7 @@ require('events').EventEmitter.defaultMaxListeners = 15;
 
 
 
-const registros_mantidos_tabela_leitura = 8;
+const registros_mantidos_tabela_leitura = 300;
 
 
 function iniciar_escuta() {
@@ -121,7 +121,7 @@ if (gerar_dados_aleatorios) {
     setInterval(function() {
         console.log('Gerando valores aleatórios!');
 
-        registrar_leitura(Math.random()*800)
+        registrar_leitura(Math.random() * 800)
     }, intervalo_geracao_aleatoria_segundos * 1000);
 } else {
     // iniciando a "escuta" de dispositivos Arduino.

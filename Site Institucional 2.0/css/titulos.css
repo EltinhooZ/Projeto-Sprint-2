@@ -1,0 +1,193 @@
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.card {
+    margin-right: 300px;
+    margin-left: 100px;
+    align-items: center;
+    background: #eaeaeb;
+    border-radius: 13px;
+    padding: 30px 0;
+    border-bottom: black 5px solid;
+    box-shadow: 0px 3px 8px black;
+}
+
+.hover1:hover {
+    position: relative;
+    bottom: 3px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.hover2:hover {
+    position: relative;
+    bottom: 3px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.planos {
+    text-align: center;
+    padding: 60px 0;
+    font-size: 15px;
+}
+
+.planos img {
+    width: 90px;
+}
+
+.planos ul {
+    text-align: center;
+    list-style: none;
+    display: flex;
+    margin-left: 200px;
+}
+
+#t-liberta62 {
+    position: relative;
+}
+
+.outros h1 {
+    text-align: left;
+    margin-left: 7%;
+}
+
+.texto {
+    background-color: white;
+    width: 480px;
+    height: 480px;
+    border-bottom: black 5px solid;
+    box-shadow: 0px 3px 8px black;
+    display: inline-block;
+    margin-top: 6%;
+    margin-left: 15%;
+}
+
+.texto p {
+    padding: 0px 20px 0px 20px;
+    font-size: larger;
+}
+
+.img {
+    width: 450px;
+    height: 450px;
+    margin-top: 100px;
+    margin-left: 200px;
+    float: left;
+    background-image: url('../img/solucao.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.img2 {
+    width: 850px;
+    height: 680px;
+    margin-top: 150px;
+    margin-right: 100px;
+    float: right;
+    background-image: url('../img/ideia.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.imagens img {
+    width: 450px;
+    height: 350px;
+    padding-bottom: 94px;
+}
+
+.imagens .taça {
+    width: 300px;
+}
+
+.foto1-esquerda {
+    position: relative;
+    bottom: 110px;
+    margin-left: 68px;
+}
+
+.foto2-esquerda {
+    position: relative;
+    bottom: 110px;
+    margin-left: 80px;
+}
+
+#t-63 {
+    width: 375px;
+    position: relative;
+    top: 50px;
+    margin-left: 10%;
+}
+
+#pele-63 {
+    width: 450px;
+    height: 350px;
+    padding-bottom: 94px;
+    position: relative;
+    top: 50px;
+}
+
+#l-62 {
+    width: 330px;
+    height: 350px;
+    padding-bottom: 94px;
+    position: relative;
+    top: 50px;
+}
+
+#c-62 {
+    width: 420px;
+    height: 350px;
+    padding-bottom: 94px;
+    position: relative;
+    top: 50px;
+}
+
+#texto-esquerda63 {
+    position: relative;
+    top: 25px;
+}
+
+#l-2011 {
+    position: relative;
+    top: 130px;
+}
+
+#j-2011 {
+    position: relative;
+    top: 130px;
+}
+
+.imagens {
+    margin-left: 7%;
+}
+
+.texto-esquerda {
+    background-color: white;
+    width: 680px;
+    height: 550px;
+    border-bottom: black 5px solid;
+    box-shadow: 0px 3px 8px black;
+    display: inline-block;
+    margin-top: 6%;
+}
+
+.texto-esquerda p {
+    padding: 0px 20px 0px 20px;
+    font-size: larger;
+}
+
+.foto2-direita {
+    position: relative;
+    bottom: 90px;
+    margin-left: 153px
+}
+
+.foto1-direita {
+    position: relative;
+    bottom: 90px;
+    margin-left: 650px;
+}
