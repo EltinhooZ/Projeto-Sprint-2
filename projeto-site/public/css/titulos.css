@@ -1,0 +1,113 @@
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.card {
+    margin-right: 300px;
+    margin-left: 100px;
+    align-items: center;
+    background: #eaeaeb;
+    border-radius: 13px;
+    padding: 30px 0;
+    border-bottom: black 5px solid;
+    box-shadow: 0px 3px 8px black;
+}
+
+.hover1:hover {
+    position: relative;
+    bottom: 3px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.hover2:hover {
+    position: relative;
+    bottom: 3px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.planos {
+    text-align: center;
+    padding: 60px 0;
+    font-size: 15px;
+}
+
+.planos img {
+    width: 90px;
+}
+
+.planos ul {
+    text-align: center;
+    list-style: none;
+    display: flex;
+    margin-left: 200px;
+}
+
+.outros h1 {
+    text-align: left;
+    margin-left: 7%;
+}
+
+.texto {
+    background-color: white;
+    width: 480px;
+    height: 480px;
+    border-bottom: black 5px solid;
+    box-shadow: 0px 3px 8px black;
+    display: inline-block;
+    margin-top: 6%;
+    margin-left: 15%;
+}
+
+.texto p {
+    padding: 0px 20px 0px 20px;
+    font-size: larger;
+}
+
+.img {
+    width: 450px;
+    height: 450px;
+    margin-top: 100px;
+    margin-left: 200px;
+    float: left;
+    background-image: url('../img/solucao.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.img2 {
+    width: 850px;
+    height: 680px;
+    margin-top: 150px;
+    margin-right: 100px;
+    float: right;
+    background-image: url('../img/ideia.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.imagens {
+    margin-left: 7%;
+}
+
+.imagens h1 {
+    text-align: center;
+}
+
+.texto-esquerda {
+    background-color: white;
+    width: 680px;
+    height: 550px;
+    border-bottom: black 5px solid;
+    box-shadow: 0px 3px 8px black;
+    display: inline-block;
+    margin-top: 6%;
+}
+
+.texto-esquerda p {
+    padding: 0px 20px 0px 20px;
+    font-size: larger;
+}

@@ -6,25 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Simulador</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Geral.css">
+    <link rel="stylesheet" href="css/titulos.css">
+    <script src="https://kit.fontawesome.com/d91b749ddb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <div class="header">
+        <div class="faixaHeader"></div>
         <div class="container">
-            <div class="title-header">
-                <h1 class="hightlight">Simulador</h1>
-            </div>
+            <h1>EcoLight</h1>
             <div class="nav">
-                <ul>
-                    <li><a href="home.html">Inicio</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="servico.html">Serviços</a></li>
-                    <li class="current"><a href="Simulador.html">Simulador</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
+                <a href="Home.html">Início</a>
+                <a href="Simulador.html" class="ativo">Simulador</a>
+                <a href="login.html">Login</a>
             </div>
+        </div>
+    </div>
+    <div class="RetanguloTitulo">
+        <div class="titulos">
+            <h1>Faça Agora a Simulação do Nosso Serviço! </h1>
         </div>
     </div>
 
@@ -33,7 +35,7 @@
     <div class="quadrado1">
 
         <form class="form">
-            <b class="titulo">Faça sua simulação agora!</b><br><br> Nome da sua empresa: <input id="empresa"><br>
+            <br><br> Nome da sua empresa: <input id="empresa"><br>
             <!-- Nome da empresa-->
             Quantas lâmpadas há na sua empresa? <input id="qtd_lampadas"><br><br>
             <!--Quantidade de lampadas-->
@@ -45,17 +47,23 @@
             <!-- Quantos dias por mês-->
 
         </form>
-        <button class="botao-Roxo" onclick="no_cliente()"><b>Calcular</b></button><br><br>
+        <button class="botao" onclick="no_cliente()"><b>Calcular</b></button><br><br>
         <span class="resultadoStyle" id="fora"></span><br><br>
 
 
-        <button class="botao-Roxo2" onclick="cliente()"><b>Sua economia</b></button><br><br>
-        <span class="resultadoStyle" id="dentro"></span>
+        <button class="botao2" onclick="cliente()"><b>Sua economia</b></button><br><br>
+        <span class="resultadoStyle2" id="dentro"></span>
 
     </div>
-    <div class="FIM">
-        <p>ECOLight® Copyright 2020</p>
-    </div>
+
+    <div class="footer" id="redesSociais">
+        <p>EcoLight© 2020</p>
+        <div class="social">
+            <a class="fab fa-facebook fa-2x" href="#" target="_blank"></a>
+            <a class="fab fa-instagram fa-2x" href="#" target="_blank"></a>
+            <a class="fab fa-linkedin fa-2x" href="#" target="_blank"></a>
+        </div>
+
 
 
 </body>
@@ -68,12 +76,12 @@
         var consumo_diario = (((watts.value * qtd_lampadas.value)) * hora.value); // Aqui eu tenho o consumo de kW/h diario
         var tt = (consumo_diario * preco) * mes.value; // Aqui eu tenho o consumo de kW/h mensal
 
-        fora.innerHTML = `O gasto mensal da <b>${empresa.value}</b> é de <b style="color: White">R$ ${(tt).toFixed(2)}</b>.`; // O que irá aparecer na tela
+        fora.innerHTML = `O gasto mensal da <b style="color: Orange;">${empresa.value}</b> é de <b style="color: orange;">R$ ${(tt).toFixed(2)}</b>.`; // O que irá aparecer na tela
     }
 
     function cliente() {
 
-        var iluminacao_natural = 100; // Supondo que por mês ele receba 100 Kw 
+        var iluminacao_natural = 300; // Supondo que por mês ele receba 300 Lumens 
         var energia_da_solucao = (Number(iluminacao_natural) + Number(0.020)) * hora.value; // O 0,020 kw é referente as lampadas de LED dimerizaveis
         var consumo_diario = (((watts.value * qtd_lampadas.value)) * hora.value);
         var economia = ((consumo_diario - energia_da_solucao) * preco) * mes.value; // seria o resultdo do cliente menos o nosso resultado, que geraria o produto final ( ou preço final)
@@ -81,6 +89,6 @@
         var percentual = 100 - ((economia * 100) / tt); // quanto o cliete esta economizando em porcentagem.
 
 
-        dentro.innerHTML = `Com a Nossa empresa , você gastaria somente <b style="color: white"> R$ ${(economia).toFixed(2)}</b>, economizando <b style="color: white"> ${(percentual).toFixed(2)}%</b>!`
+        dentro.innerHTML = `Com a Nossa empresa , você gastaria somente <b style="color: Orange;"> R$ ${(economia).toFixed(2)}</b>, economizando <b style="color: Orange"> ${(percentual).toFixed(2)}%</b>!`
     }
 </script>

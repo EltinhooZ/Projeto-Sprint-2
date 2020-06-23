@@ -2,61 +2,174 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Inicio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio EcoLight</title>
+    <link rel="stylesheet" href="css/Geral.css" />
+    <link rel="stylesheet" href="css/titulos.css">
+    <link rel="stylesheet" href="css/form-style.css">
+    <script src="https://kit.fontawesome.com/d91b749ddb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="header">
+        <div class="faixaHeader"></div>
         <div class="container">
-            <div class="title-header">
-                <h1> <span class="highlight">Inicío</h1>
-            </div>
+            <h1>EcoLight</h1>
             <div class="nav">
-                <ul>
-                    <li class="current"><a href="Home.html">Inicío</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="servico.html">Serviços</a></li>
-                    <li><a href="Simulador.html">Simulador</a></li>
-                    <li><a href="login.html">Login</a></li>
-
-                </ul>
+                <a class="ativo" href="#">Início</a>
+                <a href="Simulador.html">Simulador</a>
+                <a href="login.html">Login</a>
             </div>
         </div>
     </div>
-    <!--Showcase -->
-    <div class="showcase">
-        <div class="container">
-            <h1>Seja Bem-Vindo a EcoLight</h1>
+    <div class="RetanguloTitulo">
+        <div class="titulos">
+            <h1>Seja Bem Vindo ao nosso Site Institucional </h1>
         </div>
     </div>
-    <!-- Notificação -->
-    <div class="new">
-        <div class="container">
-            <h1>Receba Nossos Planos</h1>
-            <form>
-                <input type="email" placeholder="Digite Seu Email">
-                <button type="submit" class="botao-Roxo">Enviar</button>
-            </form>
+    <div class="imagens">
+        <div class="texto">
+            <h1>Quem Somos ?</h1>
+            <p>Nós da EcoLight somos uma empresa de soluções de ti. Temos como intuito a sustentabilidade em economia de energia visando assim melhorar o ambiente de trabalho e a qualidade das indústrias, Somos formados por 4 estudantes que tiveram uma ideia
+                em conjunto em um projeto da faculdade e decidimos levar para frente por algo muito relevante para o Mundo atualmente, tendo em consideração o meio ambiente e o desperdicio de energia que ocorre nas indústrias todo ano fazendo com que
+                o gasto com energia seja muito alto, deixando o Produto final muito mais caro do que ele deveria ser. Com isso buscamos melhorar o meio ambiente e trazer soluções inovadoras para o Mercado industrial.
+            </p>
+        </div>
+        <div class="img">
+
         </div>
     </div>
-    <div class="showcase2">
-        <div class="container">
-            <h1>Uma Solução <span>Sustentavél</span> para o seu negócio</h1>
-            </div>
-        </div>
 
-        <div class="container">
-            <p>
-            <b>Fale conosco:</b>
-                
-                <span>ecolight@projetoIot.com</span><span>(xx)xxxxx-xxxx</span>
-    
-            </p>   
-        </div>
 
+
+    <div class="imagens">
+        <div class="texto-esquerda">
+            <h1>Nossa ideia</h1>
+            <p>O Brasil é o país que mais recebe irradiação solar em todo o mundo, por estar localizado próximo à linha do Equador, tornando-se favorável a implementação de novos projetos afim de economizar energia e diminuir gastos. Com tudo, a eficiência
+                energética viabiliza a redução dos níveis de emissão de CO2 e, consequentemente, do impacto ambiental, promovendo uma política ambiental sustentável no longo prazo. Com essa base, nossa equipe decidiu inovar e usar essa vantagem do Brasil
+                de forma inteligente, supondo que uma indústria tenha muita iluminação solar durante o dia, mas mesmo assim mantém suas lâmpadas acesas durante o dia inteiro, o uso de energia é desnecessário, nossa ideia é que com sensores de luminosidade
+                junto com um dimmer os sensores automaticamente diminuam a potência de lâmpadas em áreas que estejam com alta incidência de luz solar, coletando dados em lúmens e mostrando para o cliente pontos em que ele poderia colocar uma janela para
+                diminuir ainda mais o custo com energia de sua indústria, diminuindo o custo de produção e aumentando o lucro da mesma.
+            </p>
+        </div>
+        <div class="img2">
+
+        </div>
+    </div>
+
+
+    <div class="RetanguloTitulo">
+        <div class="titulos">
+            <h1>Nossos Serviços </h1>
+        </div>
+    </div>
+    <div class="planos">
+        <div class="container">
+            <ul>
+                <div class="card hover1">
+                    <li>
+                        <img src="img/standart.png">
+                        <h1>Stantard</h1>
+                        <p>Assine o Plano Standart por apenas R$XXX.XX/mês
+                        </p>
+                    </li>
+                </div>
+                <div class="card hover2">
+                    <li>
+                        <img src="img/premium.png">
+                        <h1>Premium</h1>
+                        <p>Assine o Plano Premium por apenas R$XXX.XX/mês</p>
+                    </li>
+                </div>
+        </div>
+        </ul>
+    </div>
+    <div class="RetanguloTitulo">
+        <div class="titulos">
+            <h1>Contato</h1>
+        </div>
+    </div>
+
+    <div class="main-contato">
+        <h1>Ficou interessado na nossa ideia ?</h1>
+        <p class="p2">Cadastre-se para saber mais sobre os planos e notícias</p>
+
+        <form>
+            <ul id="MensagemErro">
+            </ul>
+            <label for="nomesobrenome"> Nome e Sobrenome:</label>
+            <input type="text" id="nomesobrenome" class="input-padrao">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="seuemail@dominio.com" class="input-padrao">
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" placeholder="Digite sua senha" class="input-padrao">
+
+            <label for="Confirmar">Confirme sua Senha:</label>
+            <input type="password" id="ConfirmaSenha" placeholder="Confirme sua senha" class="input-padrao">
+
+
+        </form>
+        <button onclick="enviaContato()" class="input-padrao botão">Enviar</button>
+
+    </div>
+
+
+    <div class="footer" id="redesSociais">
+        <p>EcoLight© 2020</p>
+        <div class="social">
+            <a class="fab fa-facebook fa-2x" href="#" target="_blank"></a>
+            <a class="fab fa-instagram fa-2x" href="#" target="_blank"></a>
+            <a class="fab fa-linkedin fa-2x" href="#" target="_blank"></a>
+        </div>
 </body>
 
 </html>
+
+<script>
+    function enviaContato() {
+        var erros = validaContato();
+        MensagemErro.innerHTML = '';
+        if (erros.length > 0) {
+            for (var a = 0; a < erros.length; a++) {
+                var erro = erros[a];
+                var li = document.createElement("li");
+                li.innerHTML = erro;
+
+                MensagemErro.appendChild(li);
+            }
+        } else {
+            // codigo que envia para o banco de dados
+        }
+
+
+    }
+
+    function validaContato() {
+        var erros = [];
+
+        if (!nomesobrenome.value) {
+            erros.push("Preencha o nome");
+        }
+
+        if ((email.value.search("@") == -1) ||
+            (email.value.search(".") == -1) ||
+            (email.value.search(" ") >= 1)) {
+            erros.push("O formato de email é: usuario@dominio.com")
+        }
+
+        if (!senha.value) {
+            erros.push("Insira uma senha");
+        }
+
+        if (senha.value != ConfirmaSenha.value) {
+            erros.push("Senhas distintas!");
+        }
+
+        return erros;
+
+
+    }
+</script>
