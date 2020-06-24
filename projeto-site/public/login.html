@@ -4,48 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/load1.css">
+    <link rel="stylesheet" href="css/Geral.css">
 </head>
 
-<body>
-    <div class="header">
-        <div class="container">
-            <div class="title-header">
-                <h1 class="hightlight">Login</h1>
-            </div>
-            <div class="nav">
-                <ul>
-                    <li><a href="Home.html">Inicio</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="servico.html">Serviços</a></li>
-                    <li><a href="Simulador.html">Simulador</a></li>
-                    <li class="current"><a href="Login.html">Login</a></li>
-                </ul>
-            </div>
-        </div>
+<body class="background">
+    <!-- Carregamento da página -->
+    <div class="carregamento" id="loading" style="display: block">
+        <img src="img/load.gif" width="100%" height="100%" />
     </div>
 
-    <div class="quadrado2">
-        <form id="form_login" method="post" 
-        onsubmit="return entrar()" class="form2">
-            <h1>ECOLight</h1>
-            <div class="dentro">
-                <input name="login" type="text" id="usuario" placeholder="Usuario ou Email" autofocus> <br> <br>
-                <input name="senha" type="password" id="senha" placeholder="Senha"> <br> <br>
-                <input type="checkbox" id="manter"> Manter-me conectado <br> <br>
-                <a href="#.html"> Esqueci minha senha </a> <br>
-                <a href="cadastro.html"> Não sou cadastrado </a> <br> <br>
-                <button id="btn_entrar" class="entrar"> Entrar </button>
+    <div id="conteudo" style="display: none;">
+
+        <center>
+            <div class="QuadradoLogin">
+                <form id="form_login" method="post" onsubmit="return entrar()" class="form2">
+                    <h1>LOGIN</h1>
+                    <div class="dentro">
+                        <input class="input" name="login" type="text" id="usuario" placeholder="Usuario ou Email" autofocus> <br> <br>
+                        <input class="input" name="senha" type="password" id="senha" placeholder="Senha"> <br> <br>
+                        <input type="checkbox" id="manter"><span>Manter-me conectado</span> <br> <br>
+                        <a href="#.html"> Esqueci minha senha </a> <br>
+                        <a href="Home.html"> Não sou cadastrado </a> <br> <br>
+                        <button id="btn_entrar" class="entrar"> Entrar </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </center>
+        <img class="imagem" src="img/Ecolight.png" width="30%">
+
     </div>
+
+
+
 </body>
 
-
 </html>
-
 <script>
+    // Carregamento
+
+    var i = setInterval(function() {
+
+        clearInterval(i);
+
+
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("conteudo").style.display = "inline";
+    }, 4000);
+
+
+    // Login
 
     function entrar() {
         var formulario = new URLSearchParams(new FormData(form_login));
@@ -53,14 +62,14 @@
             method: "POST",
             body: formulario
         }).then(resposta => {
-            
+
             if (resposta.ok) {
 
                 resposta.json().then(json => {
 
                     sessionStorage.login_usuario_meuapp = json.login;
                     sessionStorage.nome_usuario_meuapp = json.nome;
-                    
+
                     window.location.href = 'index.html';
                 });
 
@@ -76,5 +85,4 @@
 
         return false;
     }
-
 </script>

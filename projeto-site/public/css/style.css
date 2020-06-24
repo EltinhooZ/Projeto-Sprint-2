@@ -17,7 +17,7 @@ body {
 }
 
 .botao-Roxo {
-    background: purple;  
+    background: purple;
     height: 35px;
     border: none;
     padding-left: 20px;
@@ -108,7 +108,6 @@ ul {
     width: 200px;
     display: flex;
     margin-left: 34%;
-    
 }
 
 .form b {
@@ -116,7 +115,6 @@ ul {
     text-align: center;
     font-weight: bold;
     margin-top: 200px;
-    
 }
 
 .quadrado1 {
@@ -125,7 +123,6 @@ ul {
     background-image: url('../imgs/roxo.png');
     background-repeat: no-repeat;
     border-radius: 10px;
-   
 }
 
 .form {
@@ -152,6 +149,8 @@ ul {
 .FIM p {
     padding-top: 25px;
 }
+
+
 /* Página serviços */
 
 .QuadradoServ {
@@ -219,8 +218,9 @@ ul {
     background-image: url('../imgs/roxo.png');
     margin-top: 80px;
     border-radius: 10px;
-    
 }
+
+
 /* planos */
 
 .card {
@@ -249,9 +249,11 @@ ul {
     display: flex;
     margin-left: 200px;
 }
-/*LOGIN*/ 
 
-.quadrado2{
+
+/*LOGIN*/
+
+.quadrado2 {
     height: 35%;
     width: 35%;
     margin-left: 34%;
@@ -263,12 +265,12 @@ ul {
     background-repeat: no-repeat;
 }
 
-.dentro{
+.dentro {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.form2{
+.form2 {
     text-align: center;
     font-size: arial;
     color: white;
@@ -276,25 +278,27 @@ ul {
     margin-top: 20px;
 }
 
-.form2 h1{
+.form2 h1 {
     color: purple;
     text-align: center;
 }
 
-
-
-.dentro a{
+.dentro a {
     font-size: small;
 }
 
-.entrar{
+.entrar {
     border: none;
     height: 30px;
     width: 60px;
     background-color: purple;
     color: white;
-}/*CADASTRO*/
-.quadrado3{
+}
+
+
+/*CADASTRO*/
+
+.quadrado3 {
     height: 55%;
     width: 35%;
     margin-left: 34%;
@@ -306,7 +310,7 @@ ul {
     background-repeat: no-repeat;
 }
 
-.form3{
+.form3 {
     font-size: arial;
     color: white;
     margin-bottom: 10px;
@@ -314,7 +318,7 @@ ul {
     text-align: center;
 }
 
-.form3 h1{
+.form3 h1 {
     color: purple;
     text-align: center;
 }

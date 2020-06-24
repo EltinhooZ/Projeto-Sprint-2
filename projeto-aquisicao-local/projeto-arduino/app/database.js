@@ -1,17 +1,33 @@
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: '127.0.0.1',
-    port: '3306',
-    user: 'teste2',
-    password: 'Eltinho10',
-    database: 'testebanco'
+const configuracoes = {
+    banco: {
+        server: "serveruminosidade1a.database.windows.net",
+        user: "adminlocal",
+        password: "20020302@Heric",
+        database: "bdLuminosidade1",
+        options: {
+            encrypt: true
+        },
+        pool: {
+            max: 4,
+            min: 1,
+            idleTimeoutMillis: 30000,
+            connectionTimeout: 5000
+        }
+    }
+}
+
+const sql = require('mssql');
+sql.on('error', err => {
+    console.error(`Erro de Conexão: ${err}`);
 });
 
-connection.connect(function(err) {
-    if (err) throw err;
-    console.log('Conectado com sucesso!')
-});
 
+function conectar() {
+    sql.close();
+    return sql.connect(configuracoes.banco)
+}
 
-
-module.exports = connection;
+module.exports = {
+    conectar: conectar,
+    sql: sql
+}

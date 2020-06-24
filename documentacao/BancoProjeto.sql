@@ -69,20 +69,19 @@ select * from sensor;
 
 create table dados_sensor(
 idDados int primary key auto_increment,
-data_emissao date,
-hora_emissao time,
+data_hora_emissao datetime,
 lux int,
 fkSensor int,
 foreign key (fkSensor) references sensor(idSensor)
 ) auto_increment = 1000 ;
 
 insert into dados_sensor values
-(null, '2020-01-01', '12:00:05', 755, '100'),
-(null, '2020-02-02', '13:05:55', 506, '101'),
-(null, '2020-03-03', '17:30:43', 607, '102'),
-(null, '2020-04-04', '22:55:10', 651, '103'),
-(null, '2020-05-05', '08:20:00', 710, '104'),
-(null, '2020-06-06', '10:15:38', 561, '105');
+(null, '2020-01-01 12:00:05', 755, '100'),
+(null, '2020-02-02 13:05:55', 506, '101'),
+(null, '2020-03-03 17:30:43', 607, '102'),
+(null, '2020-04-04 22:55:10', 651, '103'),
+(null, '2020-05-05 08:20:00', 710, '104'),
+(null, '2020-06-06 10:15:38', 561, '105');
 
 select * from dados_sensor;
 
