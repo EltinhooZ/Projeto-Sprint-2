@@ -1,32 +1,42 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     background-color: #ddd;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #363b48;
     overflow: hidden;
 }
+
+
 /*menu topo*/
-.menu-top{
+
+.menu-top {
     background-color: #d2d2d2d2;
     height: 50px;
 }
-.fa-envelope-open{
+
+.fa-envelope-open {
     margin-left: 450px;
     margin-top: 30px;
 }
-.fa-bars{
+
+.fa-bars {
     position: relative;
     left: 15px;
     height: 50px;
 }
-.sidebar{
+
+.sidebar {
     background-color: red;
 }
+
+
 /*menu lateral da esquerda*/
-.menu-lateral{
+
+.menu-lateral {
     width: 170px;
     height: 550px;
     position: absolute;
@@ -35,19 +45,24 @@ body{
     border: 15px solid red;
     border-radius: 0 15px 15px 0;
 }
-.menu-lateral a{
+
+.menu-lateral a {
     display: block;
     text-decoration: none;
     padding: 10px;
     border-radius: 5px;
 }
-.menu-lateral a:hover{
-   color: #e54343;
+
+.menu-lateral a:hover {
+    color: #e54343;
     transition-delay: .2s;
     border-radius: 5px;
 }
+
+
 /*Menu top side abrir fechar Graficos */
-.inform-top{
+
+.grafico1 {
     background-color: red;
     height: 130px;
     width: 500px;
@@ -57,9 +72,10 @@ body{
     margin: 4px;
     margin-top: 13px;
     background-color: #fff;
-    margin-left: 10px;  
+    margin-left: 10px;
 }
-.inform-second{
+
+.grafico2 {
     background-color: red;
     height: 130px;
     width: 500px;
@@ -70,17 +86,21 @@ body{
     background-color: #fff;
     margin-left: 50px;
 }
+
+
 /* Graficos*/
-.Grafico-1{
+
+.Grafico-1 {
     background-color: red;
     height: 400px;
-    width: 1075px;
+    width: ;
     margin-top: 165px;
     margin-left: 240px;
     border-radius: 15px;
     display: none;
 }
-.Grafico-2{
+
+.Grafico-2 {
     background-color: #e54343;
     height: 400px;
     width: 1075px;
@@ -89,44 +109,49 @@ body{
     border-radius: 15px;
     display: none;
 }
-.Grafico-1 a{
-    text-transform: uppercase;
-    position: absolute;
-    left: 1290px;
-    top: 220px;
-    color: #fff;
+
+.Grafico-1 a {
     text-decoration: none;
+    font-weight: bold;
+    color: white;
 }
-.Grafico-2 a{
-    text-transform: uppercase;
-    position: absolute;
-    left: 1290px;
-    top: 220px;
-    color: #fff;
+
+.Grafico-2 a {
     text-decoration: none;
+    font-weight: bold;
+    color: white;
 }
+
+
 /* icones informs */
-.fa-caret-square-down{
+
+.fa-caret-square-down {
     margin-top: 110px;
     background-color: #ddd;
     color: #fff;
-}    
-.fa-caret-square-down:hover{
+}
+
+.fa-caret-square-down:hover {
     cursor: pointer;
     background-color: #000;
 }
-.fa-envelope-open{
+
+.fa-envelope-open {
     position: relative;
     left: 780px;
     bottom: 15px;
 }
-.fa-bell{
+
+.fa-bell {
     position: relative;
     left: 790px;
     bottom: 15px;
 }
+
+
 /* menu modal */
-.box{
+
+.box {
     width: 720px;
     height: 405px;
     position: absolute;
@@ -135,36 +160,43 @@ body{
     z-index: 9999;
     display: none;
 }
-.Btn-form{
+
+.Btn-form {
     position: absolute;
     top: 342px;
     padding: 15px;
     width: 145px;
     border-radius: 15px;
     text-align: center;
-    
 }
-.Btn-form:hover{
+
+.Btn-form:hover {
     background-color: #E59866;
     transition-delay: .4s;
     transition: .3s;
 }
+
+
 /* formularios*/
-.formulario{
-    align-items: center;  
+
+.formulario {
+    align-items: center;
     float: left;
     padding: 12px;
-    background-color: #ddd;;
+    background-color: #ddd;
+    ;
     border-radius: 5px;
     position: fixed;
 }
-input{
+
+input {
     padding: 4px;
     border-radius: 4px;
     width: 350px;
     display: block;
 }
-.btn-enviar{
+
+.btn-enviar {
     cursor: pointer;
     border-radius: 15px;
     padding: 15px;
@@ -172,28 +204,36 @@ input{
     margin-left: 200px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.btn-enviar:hover{
+
+.btn-enviar:hover {
     background-color: #E59866;
     transition-delay: .4s;
     transition: .3s;
 }
-textarea{
+
+textarea {
     padding: 4px;
     width: 350px;
     display: block;
     border-radius: 4px;
     resize: none;
 }
+
+
 /* icones menu */
-.fa-home{
+
+.fa-home {
     margin-right: 10px;
 }
-.fa-clipboard-list{
+
+.fa-clipboard-list {
     margin-right: 17px;
 }
-.fa-phone-square-alt{
+
+.fa-phone-square-alt {
     margin-right: 15px;
 }
-.fa-cog{
+
+.fa-cog {
     margin-right: 12px;
 }

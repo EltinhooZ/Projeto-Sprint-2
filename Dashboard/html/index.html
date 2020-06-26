@@ -2,79 +2,82 @@
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/dashboard.css">
-	<link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.min.css">
-	
-	<title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.min.css">
+
+    <title>Dashboard</title>
 </head>
 
 <body>
-	<div class="menu-lateral">
-		<a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
-		<a href="#" onclick="openBox()"><i class="fas fa-clipboard-list"></i>Relatorio</a>
-		<a href="#"><i class="fas fa-cog"></i>Configuração</a>
-		<!--  menu-lateral-modal -->
-    <div class="box" id="close">
-        <form class="formulario" action="">
-			Nome: <input type="text"><br>
-			Email: <input type="email"><br>
-			Mensagem: <textarea name="" id="" cols="30" rows="10"></textarea><br>
-			<input class="btn-enviar" type="submit" name="Enviar">
-			<button class="Btn-form" onclick="Box()">Cancelar</button>
-		</form>
-        
+    <div class="menu-lateral">
+        <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+        <a href="#" onclick="openBox()"><i class="fas fa-clipboard-list"></i>Relatorio</a>
+        <a href="#"><i class="fas fa-cog"></i>Configuração</a>
+        <!--  menu-lateral-modal -->
+        <div class="box" id="close">
+            <form class="formulario" action="">
+                Nome: <input type="text"><br> Email: <input type="email"><br> Mensagem: <textarea name="" id="" cols="30" rows="10"></textarea><br>
+                <input class="btn-enviar" type="submit" name="Enviar">
+                <button class="Btn-form" onclick="Box()">Cancelar</button>
+            </form>
+
+        </div>
     </div>
-	</div>
-	
-<!-- fim form menu-lateral-->
-	<div class="menu-top">
-		<a href="#"></a>
-		<a href="#"><i class="far fa-envelope-open fa-1x"></i></a>
-		<a href="#"><i class="far fa-bell fa-1x"></i></a>
-	</div>
-	<!--Menu top side abrir fechar Graficos-->
-	<div class="inform-top">
-		<i class="far fa-caret-square-down fa-2x" onclick="openGrafico()"></i>
-	</div>
-	<div class="inform-top inform-second">
+
+    <!-- fim form menu-lateral-->
+    <div class="menu-top">
+        <a href="#"></a>
+        <a href="#"><i class="far fa-envelope-open fa-1x"></i></a>
+        <a href="#"><i class="far fa-bell fa-1x"></i></a>
+    </div>
+    <!--Menu top side abrir fechar Graficos-->
+    <div class="grafico1">
+        <i class="far fa-caret-square-down fa-2x" onclick="openGrafico()"></i>
+        <div class="Grafico-1" id="graf">
+            <a href="#" onclick="closeGrafico()">X</a>
+        </div>
+    </div>
+
+    <div class="grafico2">
         <i class="far fa-caret-square-down fa-2x" onclick="openGraficoDois()"></i>
-	</div>
-	<!--Graficos-->
-	<div class="Grafico-1" id="graf">
-		<a href="#"  onclick="closeGrafico()">X</a>
-		<p>Hello Word</p>
-	</div>
-	<div class="Grafico-2" id="grafDois">
-		<a href="#"  onclick="closeGraficoDois()">X</a>
-		<p>Hello Word</p>
-	</div>
+        <div class="Grafico-2" id="grafDois">
+            <a href="#" onclick="closeGraficoDois()">X</a>
+        </div>
+
+    </div>
+
+
+
 
 </body>
 
 </html>
 <script src="../fontawesome-free-5.13.0-web/js/all.min.js"></script>
 <script>
-	// Abrir e fechar Relatório
-	function Box(){
-		document.getElementById('close').style.display='none'
-	}
-	function openBox(){
-		document.getElementById('close').style.display='block'
-	}
-	// Abrir e fechar Grafico da esquerda
-	function closeGrafico(){
-		document.getElementById('graf').style.display='none'
-	}
-	function openGrafico(){
-		document.getElementById('graf').style.display='block'
-	}
-	// Abrir e fechar Grafico da direita
-	function closeGraficoDois(){
-		document.getElementById('grafDois').style.display='none'
-	}
-	function openGraficoDois(){
-		document.getElementById('grafDois').style.display='block'
-	}
+    // Abrir e fechar Relatório
+    function Box() {
+        document.getElementById('close').style.display = 'none'
+    }
+
+    function openBox() {
+        document.getElementById('close').style.display = 'block'
+    }
+    // Abrir e fechar Grafico da esquerda
+    function closeGrafico() {
+        document.getElementById('graf').style.display = 'none'
+    }
+
+    function openGrafico() {
+        document.getElementById('graf').style.display = 'block'
+    }
+    // Abrir e fechar Grafico da direita
+    function closeGraficoDois() {
+        document.getElementById('grafDois').style.display = 'none'
+    }
+
+    function openGraficoDois() {
+        document.getElementById('grafDois').style.display = 'block'
+    }
 </script>
