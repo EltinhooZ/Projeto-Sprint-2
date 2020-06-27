@@ -45,13 +45,23 @@
             </div>
         </div>
 
+
         <!-- Dashboard -->
         <div class="main" id="main">
-
-            <div class="tituloSetores">
-                <h1>Setores da sua Empresa</h1>
-
+            <div class="header">
+                <h1>Controle Os Dados da Sua Empresa</h1>
             </div>
+
+            <div class="emissao-alerta">
+                <h1>Quando um alerta será emitido ?</h1>
+                <img src="img/alertas.png">
+
+                <p>Um alerta será emitido quando a luminosidade de um ou mais setores estiver muito abaixo ou muito alta do recomendado, e com o acesso aos graficos você terá noção se a lâmpada está queimada ou se apenas a incidência de luz solar está muito
+                    alta ou muito baixa.
+                </p>
+            </div>
+
+
 
             <div class="setorCard">
 
@@ -75,12 +85,19 @@
                 </ul>
             </div>
 
+            <div class="tituloSetores">
+                <h1>Cada Card representa um Setor da Sua empresa com os nossos sensores LDR</h1>
+                <img src="img/dash.png">
+
+            </div>
+
+
+
             <!-- Grafico 1 setor 1 -->
 
             <div class="content_painel" id="fechar1">
                 <center>
                     <div class="grafico" style="width:60%;">
-                        <p>HELLO WORLD</p>
                         <p class="fechar" onclick="fecharG(1)">X</p>
                         <canvas id="canvas_grafico1"></canvas>
                     </div>
@@ -97,7 +114,15 @@
                 </center>
 
             </div>
-
+        </div>
+        <div class="footer" id="redesSociais">
+            <p>EcoLight© 2020</p>
+            <div class="social">
+                <a class="fab fa-facebook fa-2x" href="#"></a>
+                <a class="fab fa-instagram fa-2x" href="#"></a>
+                <a class="fab fa-linkedin fa-2x" href="#"></a>
+            </div>
+        </div>
 
 
 </body>
@@ -119,7 +144,7 @@
 
 
         document.getElementById("loading").style.display = "none";
-        document.getElementById("conteudo").style.display = "inline";
+        document.getElementById("conteudo").style.display = "block";
     }, 4000);
 
     function abrir(setor) {
@@ -153,12 +178,22 @@
     // neste JSON tem que ser 'labels', 'datasets' etc, 
     // porque é o padrão do Chart.js
 
+
     function atualizarCard(setor, lux) {
-        document.getElementById('atual' + setor).innerHTML = 'Luminosidade atual: ' + lux;
+        document.getElementById('atual' + setor).innerHTML = '<b>Luminosidade atual: </b>' + lux;
         let card = document.getElementById('setor' + setor);
 
         if (lux <= 500 || lux >= 900) {
             card.style.backgroundColor = 'red';
+            // use a variavel 'setor' para dizer qual setor está com problemas
+            // document.getElementById("(inserir id da div)").style.display = 'block';
+
+            // var a = setInterval(function() {
+            //     clearInterval(a);
+
+            //     document.getElementById("(inserir id da div)").style.display = 'none';
+
+            // }, 3000);
         } else if (lux >= 601 && lux <= 799) {
             card.style.backgroundColor = 'green';
         } else if (lux >= 501 && lux <= 600) {
