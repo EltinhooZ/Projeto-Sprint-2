@@ -275,7 +275,12 @@ body {
 
 
 /* Alerta */
-
+.fa-exclamation-triangle{
+    position: fixed;
+    left: 1210px;
+    top: 34px;
+    color: yellow;
+}
 
 /* Fim da página */
 

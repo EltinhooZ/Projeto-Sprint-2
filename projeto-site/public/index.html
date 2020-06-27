@@ -27,6 +27,7 @@
 
     <div id="conteudo" style="display: none;">
         <div class="container">
+            <i class="fas fa-exclamation-triangle fa-2x" id="alert"></i>
 
             <h1>DashBoard</h1>
 
@@ -182,9 +183,19 @@
     function atualizarCard(setor, lux) {
         document.getElementById('atual' + setor).innerHTML = '<b>Luminosidade atual: </b>' + lux;
         let card = document.getElementById('setor' + setor);
+        let alert=document.getElementById('alert'+ setor);
 
         if (lux <= 500 || lux >= 900) {
             card.style.backgroundColor = 'red';
+            if( lux <= 500 || lux >=900){
+                alert.style.display='block';
+                alert.style.color='red';
+            }
+            let timer=setInterval(function atualizarCard(setor){
+               clearInterval(timer);
+               document.getElementById('alert').style.display='none';
+            },3000);
+            
             // use a variavel 'setor' para dizer qual setor está com problemas
             // document.getElementById("(inserir id da div)").style.display = 'block';
 
