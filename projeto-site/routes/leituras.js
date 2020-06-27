@@ -4,7 +4,7 @@ var sequelize = require('../models').sequelize;
 var Leitura = require('../models').Leitura;
 
 /* Recuperar as últimas N leituras */
-router.get('/ultimas', function(req, res, next) {
+router.get('/ultimas/:setor', function(req, res, next) {
 
     // quantas são as últimas leituras que quer? 8 está bom?
     const limite_linhas = 300;
@@ -12,10 +12,13 @@ router.get('/ultimas', function(req, res, next) {
     console.log(`Recuperando as últimas ${limite_linhas} leituras`);
 
     const instrucaoSql = `select top ${limite_linhas} 
-						emissão, 
-						lux,
-						FORMAT(emissão,'HH:mm:ss') as momento_grafico 
-						from dados_sensor order by idDados desc`;
+	d.emissão, 
+    d.lux,
+						FORMAT(d.emissão,'HH:mm:ss') as momento_grafico 
+						from dados_sensor d, sensor s, setor st
+where d.fkSensor = s.idSensor and s.fkSetor = st.idSetor
+and st.idSetor= ${req.params.setor}   
+order by d.idDados desc`;
 
     sequelize.query(instrucaoSql, {
             model: Leitura,
@@ -32,12 +35,17 @@ router.get('/ultimas', function(req, res, next) {
 
 
 // tempo real (último valor de cada leitura)
-router.get('/tempo-real', function(req, res, next) {
+router.get('/tempo-real/:setor', function(req, res, next) {
 
     console.log(`Recuperando a última leitura`);
 
-    const instrucaoSql = `select top 1 emissão, lux, FORMAT(emissão,'HH:mm:ss') as momento_grafico  
-						from dados_sensor order by idDados desc`;
+    const instrucaoSql = `select top 1 d.emissão, 
+    d.lux,
+						FORMAT(d.emissão,'HH:mm:ss') as momento_grafico 
+						from dados_sensor d, sensor s, setor st
+where d.fkSensor = s.idSensor and s.fkSetor = st.idSetor
+and st.idSetor= ${req.params.setor}   
+order by d.idDados desc`;
 
     sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
         .then(resultado => {
