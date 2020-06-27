@@ -140,8 +140,8 @@
         datasets: [{
                 yAxisID: 'y-temperatura',
                 label: 'Luminosidade',
-                borderColor: window.chartColors.blue,
-                backgroundColor: window.chartColors.red,
+                borderColor: window.chartColors.yellow,
+                backgroundColor: window.chartColors.black,
                 fill: false,
                 data: []
             }
@@ -157,7 +157,15 @@
         document.getElementById('atual' + setor).innerHTML = 'Luminosidade atual: ' + lux;
         let card = document.getElementById('setor' + setor);
 
-        card.style.backgroundColor = 'red';
+        if (lux <= 500 || lux >= 900) {
+            card.style.backgroundColor = 'red';
+        } else if (lux >= 601 && lux <= 799) {
+            card.style.backgroundColor = 'green';
+        } else if (lux >= 501 && lux <= 600) {
+            card.style.backgroundColor = 'yellow';
+        } else if (lux >= 800 && lux <= 899) {
+            card.style.backgroundColor = 'yellow';
+        }
     }
 
 
@@ -287,4 +295,3 @@
         }, 5000);
     }
 </script>
-<!-- INICIO DO GRAFICO 2 A PARTIR DAQUI -->
