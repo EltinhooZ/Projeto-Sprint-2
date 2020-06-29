@@ -88,7 +88,7 @@ router.get('/luminosity', (request, response, next) => {
 
         return banco.sql.query(`
             INSERT into dados_sensor (Emissão, lux, fkSensor)
-            values (CONVERT(Datetime, '${agora()}', 120), ${Luminosidade}, 11);
+            values (CONVERT(Datetime, '${agora()}', 120), ${Luminosidade}, 10);
             
             delete from dados_sensor where idDados not in 
             (select top ${registros_mantidos_tabela_leitura} idDados from dados_sensor order by idDados desc);`)
