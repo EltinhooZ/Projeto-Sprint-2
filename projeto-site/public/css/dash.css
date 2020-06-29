@@ -318,7 +318,6 @@ body {
 
 
 /* Alerta */
-<<<<<<< HEAD
 
 #notificacao-icon {
     width: 50px;
@@ -391,14 +390,6 @@ body {
     margin-top: 20px;
 }
 
-=======
-.fa-exclamation-triangle{
-    position: fixed;
-    left: 1210px;
-    top: 34px;
-    color: #F4D03F;
-}
->>>>>>> 63006abe2189bacb33639c52c7a4c733c85ca202
 
 /* Fim da página */
 
