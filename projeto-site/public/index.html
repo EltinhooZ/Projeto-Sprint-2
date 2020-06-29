@@ -23,6 +23,11 @@
 
     <div id="conteudo" style="display: none;">
         <div class="container">
+<<<<<<< HEAD
+=======
+            <i class="fas fa-exclamation-triangle fa-2x" id="alert"></i>
+
+>>>>>>> 63006abe2189bacb33639c52c7a4c733c85ca202
             <h1>DashBoard</h1>
 
             <a class="fas fa-bars fa-3x bars" onclick="OpenNav()"></a>
@@ -217,7 +222,9 @@
     function atualizarCard(setor, lux) {
         document.getElementById('atual' + setor).innerHTML = '<b>Luminosidade atual: </b>' + lux;
         let card = document.getElementById('setor' + setor);
+        let alert=document.getElementById('alert'+ setor);
 
+<<<<<<< HEAD
         if (setor == 1) {
             if (lux <= 500 || lux >= 900) {
                 document.getElementById('notificacao-alerta').style.display = 'block';
@@ -239,6 +246,21 @@
 
                 var a = setInterval(function() {
                     clearInterval(a);
+=======
+        if (lux <= 500 || lux >= 900) {
+            card.style.backgroundColor = 'red';
+            if( lux <= 500 || lux >=900){
+                alert.style.display='block';
+                alert.style.color='red';
+            }
+            let timer=setInterval(function atualizarCard(setor){
+               clearInterval(timer);
+               document.getElementById('alert').style.display='none';
+            },3000);
+            
+            // use a variavel 'setor' para dizer qual setor está com problemas
+            // document.getElementById("(inserir id da div)").style.display = 'block';
+>>>>>>> 63006abe2189bacb33639c52c7a4c733c85ca202
 
                     document.getElementById('notificacao-alerta2').style.display = 'none';
 
