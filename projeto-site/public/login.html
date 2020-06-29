@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/load1.css">
     <link rel="stylesheet" href="css/Geral.css">
+    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
 </head>
 
 <body class="background">
@@ -30,7 +32,9 @@
                         <button id="btn_entrar" class="entrar"> Entrar </button>
                     </div>
                 </form>
+                <div id="div_erro" style="background-color: sandybrown; color: rgb(255, 0, 0); display: none;"></div>
             </div>
+
         </center>
         <img class="imagem" src="img/Ecolight.png" width="30%">
 
@@ -42,21 +46,10 @@
 
 </html>
 <script>
-    // Carregamento
-
-    var i = setInterval(function() {
-
-        clearInterval(i);
-
-
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("conteudo").style.display = "inline";
-    }, 4000);
-
-
     // Login
 
     function entrar() {
+        aguardar();
         var formulario = new URLSearchParams(new FormData(form_login));
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -67,8 +60,8 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.login_usuario_meuapp = json.login;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    localStorage.login_usuario_meuapp = json.email_usuario;
+                    localStorage.nome_usuario_meuapp = json.nomeUsuario;
 
                     window.location.href = 'index.html';
                 });
@@ -79,6 +72,7 @@
 
                 response.text().then(texto => {
                     console.error(texto);
+                    finalizar_aguardar(texto);
                 });
             }
         });

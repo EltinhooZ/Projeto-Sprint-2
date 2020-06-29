@@ -6,17 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="css/dash.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/load1.css">
-    <script src="https://kit.fontawesome.com/d91b749ddb.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text&display=swap" rel="stylesheet">
     <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+    <script src="https://kit.fontawesome.com/d91b749ddb.js" crossorigin="anonymous"></script>
     <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
     <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
-    <style>
-        .some {
-            display: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -27,7 +23,6 @@
 
     <div id="conteudo" style="display: none;">
         <div class="container">
-
             <h1>DashBoard</h1>
 
             <a class="fas fa-bars fa-3x bars" onclick="OpenNav()"></a>
@@ -36,18 +31,48 @@
         </div>
 
 
+
         <!-- Barra de navegação -->
         <div class="sidebar" id="mysidebar">
             <span class="far fa-times-circle fa-2x close" onclick="CloseNav()"></span>
+            <i class="fas fa-user fa-3x user"></i>
+            <h1>USUARIO</h1>
+
             <div>
                 <a href="#">Relatorio</a>
                 <a href="#">Configurações</a>
+                <a href="#" onclick="logoff()" style="color:white;" class="fas fa-sign-out-alt"> Sair</a>
             </div>
         </div>
 
 
         <!-- Dashboard -->
         <div class="main" id="main">
+
+            <div class="notificacao-alerta" id="notificacao-alerta">
+                <div id="notificacao">
+                    <p>O Setor
+                        <b id="alert"></b> está com Luminosidade irregular
+                    </p>
+                    <div id="notificacao-icon">
+                        <i class="fas fa-exclamation-triangle fa-3x"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notificacao-alerta2" id="notificacao-alerta2">
+                <div id="notificacao2">
+                    <p>O Setor
+                        <b id="alert2"></b> está com Luminosidade irregular
+                    </p>
+                    <div id="notificacao-icon2">
+                        <i class="fas fa-exclamation-triangle fa-3x"></i>
+                    </div>
+                </div>
+            </div>
+
+
+
             <div class="header">
                 <h1>Controle Os Dados da Sua Empresa</h1>
             </div>
@@ -129,6 +154,16 @@
 
 </html>
 <script>
+    // login Usuario
+    function atualizar() {
+        var login = sessionStorage.getItem('nome_usuario_meuapp');
+        if (login) {
+            document.getElementById("logando").style.display = 'block';
+            document.getElementById("b_usuario").innerHTML = login;
+        }
+    }
+
+
     // Carregamento
     let timerGrafico;
     let exibindoGrafico = false;
@@ -183,17 +218,38 @@
         document.getElementById('atual' + setor).innerHTML = '<b>Luminosidade atual: </b>' + lux;
         let card = document.getElementById('setor' + setor);
 
+        if (setor == 1) {
+            if (lux <= 500 || lux >= 900) {
+                document.getElementById('notificacao-alerta').style.display = 'block';
+                document.getElementById('alert').innerHTML = `${setor}`;
+
+                var a = setInterval(function() {
+                    clearInterval(a);
+
+                    document.getElementById('notificacao-alerta').style.display = 'none';
+
+                }, 3000);
+            }
+        }
+
+        if (setor == 2) {
+            if (lux <= 500 || lux >= 900) {
+                document.getElementById('notificacao-alerta2').style.display = 'block';
+                document.getElementById('alert2').innerHTML = `${setor}`;
+
+                var a = setInterval(function() {
+                    clearInterval(a);
+
+                    document.getElementById('notificacao-alerta2').style.display = 'none';
+
+
+
+                }, 3000);
+            }
+        }
+
         if (lux <= 500 || lux >= 900) {
             card.style.backgroundColor = 'red';
-            // use a variavel 'setor' para dizer qual setor está com problemas
-            // document.getElementById("(inserir id da div)").style.display = 'block';
-
-            // var a = setInterval(function() {
-            //     clearInterval(a);
-
-            //     document.getElementById("(inserir id da div)").style.display = 'none';
-
-            // }, 3000);
         } else if (lux >= 601 && lux <= 799) {
             card.style.backgroundColor = 'green';
         } else if (lux >= 501 && lux <= 600) {
